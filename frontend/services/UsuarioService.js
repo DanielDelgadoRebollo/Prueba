@@ -19,7 +19,7 @@ class UsuarioService {
     }
 
     async deleteUsuario(usuarioId) {
-        const res = await fetch(`${this.URI}/${bookId}`, {
+        const res = await fetch(`${this.URI}/${usuarioId}`, {
             headers: {
                 'Content-Type': 'application/json',
             },

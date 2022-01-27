@@ -56,7 +56,7 @@ document.getElementById('usuario-form')
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
-      ui.addANewBook(formData);
+      ui.addANewUsuario(formData);
       ui.renderMessage('New Book Added Successfully', 'success', 2000);
     }
 
@@ -68,7 +68,7 @@ document.getElementById('usuarios-cards')
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
       ui.deleteUsuario(e.target.getAttribute('_id'));
-      ui.renderMessage('Book Deleted Successfully', 'success', 3000);
+      ui.renderMessage('Usuario Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();
   });
