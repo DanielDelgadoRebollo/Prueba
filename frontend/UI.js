@@ -9,20 +9,20 @@ class UI {
     const usuarios = await usuarioService.getUsuarios();
     const usuariosCardContainer = document.getElementById('usuarios-cards');
     usuariosCardContainer.innerHTML = '';
-    usuarios.forEach((usuario) => {
+    usuarios.forEach((Usuario) => {
       const div = document.createElement('div');
       div.className = 'animated fadeInRight';
       div.innerHTML = `
       <div class="card m-2">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="${usuario.imagePath}" class="img-fluid" alt="">
+                <img src="${Usuario.imagePath}" class="img-fluid" alt="">
             </div>
             <div class="col-md-8">
                 <div class="card-block px-2">
-                    <h4 class="card-title">${usuario.nombre}</h4>
-                    <p class="card-text">${usuario.apellidos}</p>
-                    <a href="#" class="btn btn-danger delete" _id="${usuario._id}">X</a>
+                    <h4 class="card-title">${Usuario.nombre}</h4>
+                    <p class="card-text">${Usuario.apellidos}</p>
+                    <a href="#" class="btn btn-danger delete" _id="${Usuario._id}">X</a>
                 </div>
             </div>
         </div>
