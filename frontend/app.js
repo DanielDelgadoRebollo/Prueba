@@ -15,11 +15,9 @@ document.getElementById('book-form')
     const nombre = document.getElementById('nombre').value;
     const password = document.getElementById('password').value;
     const sexo = document.getElementById('sexo').value;
-    
-    const image = document.getElementById('image').files;
 
     const formData = new FormData();
-    formData.append('image', image[0]);
+  
     formData.append('nombre', nombre);
     formData.append('password', password);
     formData.append('sexo', sexo);
