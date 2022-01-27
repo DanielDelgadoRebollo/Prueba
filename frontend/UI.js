@@ -1,4 +1,4 @@
-import UsuarioService from './services/UsuarioService.js';
+import UsuarioService from './services/UsuarioService';
 const usuarioService = new UsuarioService();
 
 import { format } from 'timeago.js';

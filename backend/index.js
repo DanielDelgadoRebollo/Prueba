@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 // routes
-app.use('/api/usuarios.js', require('./routes/usuarios.js'));
+app.use('/api/usuarios', require('./routes/usuarios'));
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));

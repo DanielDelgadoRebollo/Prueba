@@ -4,7 +4,7 @@ const router = Router();
 const path = require('path');
 const { unlink } = require('fs-extra');
 
-const Usuario = require('../models/Usuario.js');
+const Usuario = require('../models/Usuario');
 
 router.get('/', async (req, res) => {
     const usuarios = await Usuario.find().sort('-_id');
