@@ -1,16 +1,16 @@
-class BookService {
+class UsuarioService {
 
     constructor() {
         this.URI = `/api/books`;
     }
 
-    async getBooks() {
+    async getUsuarios() {
         const response = await fetch(this.URI);    
-        const books = await response.json();
-        return books;
+        const usuarios = await response.json();
+        return usuarios;
     }
 
-    async postBook(book) {
+    async postUsuarios(usuario) {
         const res = await fetch(this.URI, {
             method: 'POST',
             body: book
@@ -18,7 +18,7 @@ class BookService {
         const data = await res.json();
     }
 
-    async deleteBook(bookId) {
+    async deleteUsuario(usuarioId) {
         const res = await fetch(`${this.URI}/${bookId}`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -31,4 +31,4 @@ class BookService {
 
 }
 
-export default BookService;
+export default UsuarioService;

@@ -1,28 +1,43 @@
 import "./styles/app.css";
 
-import Book from './models/Book.js';
+import Usuario from './models/Usuario.js';
 import UI from './UI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
-  ui.renderBooks();
+  ui.renderUsuarios();
 });
 
 
-document.getElementById('book-form')
+document.getElementById('usuario-form')
   .addEventListener('submit', function(e) {
 
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const isbn = document.getElementById('isbn').value;
+    const usuario = document.getElementById('usuario').value;
+    const contrasenia = document.getElementById('contrasenia').value;
+    const nombre = document.getElementById('nombre').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const edad = document.getElementById('edad').value;
+    const localizacion = document.getElementById('localizacion').value;
+    const email = document.getElementById('email').value;
+    const sexo = document.getElementById('sexo').value;
+    const trabajo = document.getElementById('trabajo').value;
+    const tarjetaBancaria = document.getElementById('tarjetaBancaria').value;
+    const nacionalidad = document.getElementById('nacionalidad').value;
     
-    const image = document.getElementById('image').files;
+   
 
     const formData = new FormData();
-    formData.append('image', image[0]);
-    formData.append('title', title);
-    formData.append('author', author);
-    formData.append('isbn', isbn);
+    formData.append('usuario', usuario);
+    formData.append('contrasenia', contrasenia);
+    formData.append('nombre', nombre);
+    formData.append('apellidos', apellidos);
+    formData.append('edad', edad);
+    formData.append('localizacion', localizacion);
+    formData.append('email', email);
+    formData.append('sexo', sexo);
+    formData.append('trabajo', trabajo);
+    formData.append('tarjetaBancaria', tarjetaBancaria);
+    formData.append('nacionalidad', nacionalidad);
 
     // for(var pair of formData.entries()) {
     //   console.log(pair[0]+', '+pair[1]);
@@ -32,10 +47,11 @@ document.getElementById('book-form')
     const ui = new UI();
 
     // New Book Object
-    const book = new Book(title, author, isbn);
+    const user= new Usuario(usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, tarjetaBancaria, nacionalidad);
 
     // Validating User Input
-    if (title === '' || author === '' || isbn === '') {
+    if (usuario === '' || contrasenia === '' || nombre === '' || apellidos === '' || edad === '' || localizacion === '' 
+    || email === '' || sexo === '' || trabajo === '' || tarjetaBancaria === '' || nacionalidad === '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
@@ -46,11 +62,11 @@ document.getElementById('book-form')
     e.preventDefault();
   });
 
-document.getElementById('books-cards')
+document.getElementById('usuarios-cards')
   .addEventListener('click', e => {
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
-      ui.deleteBook(e.target.getAttribute('_id'));
+      ui.deleteUsuario(e.target.getAttribute('_id'));
       ui.renderMessage('Book Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();
