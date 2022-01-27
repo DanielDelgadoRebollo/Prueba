@@ -1,28 +1,28 @@
 import "./styles/app.css";
 
-import Usuario from './models/Usuario.js';
+import Book from './models/Book.js';
 import UI from './UI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
-  ui.renderUsuarios();
+  ui.renderBooks();
 });
 
 
-document.getElementById('usuario-form')
+document.getElementById('book-form')
   .addEventListener('submit', function(e) {
 
-    const nombre = document.getElementById('nombre').value;
-    const apellidos = document.getElementById('apellidos').value;
-    const alias = document.getElementById('alias').value;
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const isbn = document.getElementById('isbn').value;
     
     const image = document.getElementById('image').files;
 
     const formData = new FormData();
     formData.append('image', image[0]);
-    formData.append('nombre', nombre);
-    formData.append('apellidos', apellidos);
-    formData.append('alias', alias);
+    formData.append('title', title);
+    formData.append('author', author);
+    formData.append('isbn', isbn);
 
     // for(var pair of formData.entries()) {
     //   console.log(pair[0]+', '+pair[1]);
@@ -32,26 +32,26 @@ document.getElementById('usuario-form')
     const ui = new UI();
 
     // New Book Object
-    const usuario = new Usuario(nombre, apellidos, alias);
+    const book = new Book(title, author, isbn);
 
     // Validating User Input
-    if (nombre === '' || apellidos === '' || alias === '') {
+    if (title === '' || author === '' || isbn === '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
-      ui.addANewUsuario(formData);
-      ui.renderMessage('New Usuario Added Successfully', 'success', 2000);
+      ui.addANewBook(formData);
+      ui.renderMessage('New Book Added Successfully', 'success', 2000);
     }
 
     e.preventDefault();
   });
 
-document.getElementById('usuarios-cards')
+document.getElementById('books-cards')
   .addEventListener('click', e => {
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
-      ui.deleteUsuario(e.target.getAttribute('_id'));
-      ui.renderMessage('Usuario Deleted Successfully', 'success', 3000);
+      ui.deleteBook(e.target.getAttribute('_id'));
+      ui.renderMessage('Book Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();
   });
