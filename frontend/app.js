@@ -35,7 +35,7 @@ document.getElementById('book-form')
     const book = new Book(nombre, password, sexo);
 
     // Validating User Input
-    if (title === '' || author === '' || isbn === '') {
+    if (nombre === '' || password === '' || sexo === '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
