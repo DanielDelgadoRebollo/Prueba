@@ -6,11 +6,11 @@ class UsuarioService {
 
     async getUsuarios() {
         const response = await fetch(this.URI);    
-        const usuarios = await response.json();
+        const books = await response.json();
         return usuarios;
     }
 
-    async postUsuarios(usuario) {
+    async postUsuario(usuario) {
         const res = await fetch(this.URI, {
             method: 'POST',
             body: usuario

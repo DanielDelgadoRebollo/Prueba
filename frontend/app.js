@@ -12,32 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('usuario-form')
   .addEventListener('submit', function(e) {
 
-    const usuario = document.getElementById('usuario').value;
-    const contrasenia = document.getElementById('contrasenia').value;
     const nombre = document.getElementById('nombre').value;
     const apellidos = document.getElementById('apellidos').value;
-    const edad = document.getElementById('edad').value;
-    const localizacion = document.getElementById('localizacion').value;
-    const email = document.getElementById('email').value;
-    const sexo = document.getElementById('sexo').value;
-    const trabajo = document.getElementById('trabajo').value;
-    const tarjetaBancaria = document.getElementById('tarjetaBancaria').value;
-    const nacionalidad = document.getElementById('nacionalidad').value;
+    const alias = document.getElementById('alias').value;
     
-   
+    const image = document.getElementById('image').files;
 
     const formData = new FormData();
-    formData.append('usuario', usuario);
-    formData.append('contrasenia', contrasenia);
+    formData.append('image', image[0]);
     formData.append('nombre', nombre);
     formData.append('apellidos', apellidos);
-    formData.append('edad', edad);
-    formData.append('localizacion', localizacion);
-    formData.append('email', email);
-    formData.append('sexo', sexo);
-    formData.append('trabajo', trabajo);
-    formData.append('tarjetaBancaria', tarjetaBancaria);
-    formData.append('nacionalidad', nacionalidad);
+    formData.append('alias', alias);
 
     // for(var pair of formData.entries()) {
     //   console.log(pair[0]+', '+pair[1]);
@@ -47,17 +32,15 @@ document.getElementById('usuario-form')
     const ui = new UI();
 
     // New Book Object
-    const user= new Usuario(usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, 
-      tarjetaBancaria, nacionalidad);
+    const usuario = new Usuario(nombre, apellidos, alias);
 
     // Validating User Input
-    if (usuario === '' || contrasenia === '' || nombre === '' || apellidos === '' || edad === '' || localizacion === '' 
-    || email === '' || sexo === '' || trabajo === '' || tarjetaBancaria === '' || nacionalidad === '') {
+    if (nombre === '' || apellidos === '' || alias === '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
       ui.addANewUsuario(formData);
-      ui.renderMessage('New Book Added Successfully', 'success', 2000);
+      ui.renderMessage('New Usuario Added Successfully', 'success', 2000);
     }
 
     e.preventDefault();
@@ -68,7 +51,7 @@ document.getElementById('usuarios-cards')
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
       ui.deleteUsuario(e.target.getAttribute('_id'));
-      ui.renderMessage('Usuario Deleted Successfully', 'success', 3000);
+      ui.renderMessage('Book Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();
   });

@@ -20,8 +20,8 @@ class UI {
             </div>
             <div class="col-md-8">
                 <div class="card-block px-2">
-                    <h4 class="card-title">${usuario.usuario}</h4>
-                    <p class="card-text">${usuario.nombre}</p>
+                    <h4 class="card-title">${usuario.nombre}</h4>
+                    <p class="card-text">${usuario.apellidos}</p>
                     <a href="#" class="btn btn-danger delete" _id="${usuario._id}">X</a>
                 </div>
             </div>
@@ -43,7 +43,7 @@ class UI {
 
   clearUsuarioForm() {
     document.getElementById('usuario-form').reset();
-    document.getElementById('usuario').focus();
+    document.getElementById('nombre').focus();
   }
 
   renderMessage(message, colorMessage, secondsToRemove) {
@@ -63,7 +63,7 @@ class UI {
     }, secondsToRemove);
   }
 
-  async deleteUsuario(usuarioId) {
+  async deleteUsurio(usuarioId) {
     await usuarioService.deleteUsuario(usuarioId);
     this.renderUsuarios();
   }

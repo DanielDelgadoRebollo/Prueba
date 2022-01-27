@@ -14,7 +14,7 @@
   <!-- NAVIGATION -->
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/">Books App</a>
+      <a class="navbar-brand" href="/">Usuarios App</a>
     </div>
   </nav>
 
@@ -22,47 +22,29 @@
     <div class="row">
       <div class="col-md-4">
 
-        <form id="usuario-form" class="card card-body">
+        <form id="book-form" class="card card-body">
           <div class="form-group">
-            <input type="text" id="usuario" class="form-control" placeholder="Nombre usuario" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" id="contrasenia" class="form-control" placeholder="Contraseña">
-          </div>
-          <div class="form-group">
-            <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+            <input type="text" id="nombre" class="form-control" placeholder="BNombre" autofocus>
           </div>
           <div class="form-group">
             <input type="text" id="apellidos" class="form-control" placeholder="Apellidos">
           </div>
           <div class="form-group">
-            <input type="text" id="edad" class="form-control" placeholder="Edad">
+            <input type="text" id="alias" class="form-control" placeholder="Alias">
           </div>
-          <div class="form-group">
-            <input type="text" id="localizacion" class="form-control" placeholder="Localizacion">
-          </div>
-          <div class="form-group">
-            <input type="text" id="email" class="form-control" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="text" id="sexo" class="form-control" placeholder="Sexo">
-          </div>
-          <div class="form-group">
-            <input type="text" id="trabajo" class="form-control" placeholder="Trabajo">
-          </div>
-          <div class="form-group">
-            <input type="text" id="tarjetaBancaria" class="form-control" placeholder="Tarjeta Bancaria">
-          </div>
-          <div class="form-group">
-            <input type="text" id="nacionalidad" class="form-control" placeholder="Nacionalidad">
-          </div>
+          <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="image" required>
+                <label class="custom-file-label" for="image" aria-describedby="inputGroupFileAddon02">Choose Image</label>
+              </div>
+            </div>
           <button type="Submit" class="btn btn-primary">
             Guardar Usuario
           </button>
         </form>
       </div>
 
-      <div class="col-md-8" id="books-cards">
+      <div class="col-md-8" id="usuarios-cards">
       </div>
 
     </div>
