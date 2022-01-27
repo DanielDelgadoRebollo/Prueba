@@ -51,7 +51,7 @@ document.getElementById('usuarios-cards')
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
       ui.deleteUsuario(e.target.getAttribute('_id'));
-      ui.renderMessage('Book Deleted Successfully', 'success', 3000);
+      ui.renderMessage('Usuario Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();
   });

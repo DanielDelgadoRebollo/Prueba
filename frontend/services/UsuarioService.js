@@ -6,7 +6,7 @@ class UsuarioService {
 
     async getUsuarios() {
         const response = await fetch(this.URI);    
-        const books = await response.json();
+        const usuarios = await response.json();
         return usuarios;
     }
 
