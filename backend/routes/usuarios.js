@@ -4,26 +4,27 @@ const router = Router();
 const path = require('path');
 const { unlink } = require('fs-extra');
 
-const Book = require('../models/Book');
+const Usuario = require('../models/Usuario');
 
 router.get('/', async (req, res) => {
-    const books = await Book.find().sort('-_id');
-    res.json(books);
+    const usuarios = await Usuario.find().sort('-_id');
+    res.json(usuarios);
 });
 
 router.post('/', async (req, res) => {
-    const { title, author, isbn } = req.body;
-    const imagePath = '/uploads/' + req.file.filename;
-    const newBook = new Book({title, author, isbn, imagePath});
-    console.log(newBook)
-    await newBook.save();
-    res.json({'message': 'Book Saved'});
+    const { usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, 
+        tarjetaBancaria, nacionalidad } = req.body;
+    const newUsuario = new Usuario({usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, 
+        tarjetaBancaria, nacionalidad});
+    console.log(newUsuario)
+    await newUsuario.save();
+    res.json({'message': 'Usuario Saved'});
 });
 
 router.delete('/:id', async (req, res) => {
-    const book = await Book.findByIdAndDelete(req.params.id);
-    await unlink(path.resolve('./backend/public/' + book.imagePath));
-    res.json({message: 'Book Deleted'});
+    const usuario = await Usuario.findByIdAndDelete(req.params.id);
+    await unlink(path.resolve('./backend/public/' + usuario.imagePath));
+    res.json({message: 'Usuario Deleted'});
 });
 
 

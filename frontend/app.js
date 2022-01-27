@@ -47,7 +47,8 @@ document.getElementById('usuario-form')
     const ui = new UI();
 
     // New Book Object
-    const user= new Usuario(usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, tarjetaBancaria, nacionalidad);
+    const user= new Usuario(usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, 
+      tarjetaBancaria, nacionalidad);
 
     // Validating User Input
     if (usuario === '' || contrasenia === '' || nombre === '' || apellidos === '' || edad === '' || localizacion === '' 
