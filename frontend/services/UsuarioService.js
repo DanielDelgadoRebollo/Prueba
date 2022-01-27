@@ -1,7 +1,7 @@
 class UsuarioService {
 
     constructor() {
-        this.URI = `/api/books`;
+        this.URI = `/api/usuarios`;
     }
 
     async getUsuarios() {
@@ -13,7 +13,7 @@ class UsuarioService {
     async postUsuarios(usuario) {
         const res = await fetch(this.URI, {
             method: 'POST',
-            body: book
+            body: usuario
         });
         const data = await res.json();
     }
