@@ -1,8 +1,8 @@
 class Book {
-  constructor(title, author, isbn) {
-    this.title = title;
-    this.author = author;
-    this.isbn = isbn;
+  constructor(nombre, password, sexo) {
+    this.nombre = nombre;
+    this.password = password;
+    this.sexo = sexo;
   }
 }
 

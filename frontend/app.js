@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('book-form')
   .addEventListener('submit', function(e) {
 
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const isbn = document.getElementById('isbn').value;
+    const nombre = document.getElementById('nombre').value;
+    const password = document.getElementById('password').value;
+    const sexo = document.getElementById('sexo').value;
     
     const image = document.getElementById('image').files;
 
     const formData = new FormData();
     formData.append('image', image[0]);
-    formData.append('title', title);
-    formData.append('author', author);
-    formData.append('isbn', isbn);
+    formData.append('nombre', nombre);
+    formData.append('password', password);
+    formData.append('sexo', sexo);
 
     // for(var pair of formData.entries()) {
     //   console.log(pair[0]+', '+pair[1]);
@@ -32,7 +32,7 @@ document.getElementById('book-form')
     const ui = new UI();
 
     // New Book Object
-    const book = new Book(title, author, isbn);
+    const book = new Book(nombre, password, sexo);
 
     // Validating User Input
     if (title === '' || author === '' || isbn === '') {
