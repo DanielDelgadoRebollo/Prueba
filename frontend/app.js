@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('usuario-form')
   .addEventListener('submit', function(e) {
 
-    const usuario = document.getElementById('usuario').value;
-    const contrasenia = document.getElementById('contrasenia').value;
-    const nombre = document.getElementById('nombre').value;
-    const apellidos = document.getElementById('apellidos').value;
-    const edad = document.getElementById('edad').value;
-    const localizacion = document.getElementById('localizacion').value;
-    const email = document.getElementById('email').value;
-    const sexo = document.getElementById('sexo').value;
-    const trabajo = document.getElementById('trabajo').value;
-    const tarjetaBancaria = document.getElementById('tarjetaBancaria').value;
-    const nacionalidad = document.getElementById('nacionalidad').value;
+    const usuario = document.getElementsByName('usuario').value;
+    const contrasenia = document.getElementsByName('contrasenia').value;
+    const nombre = document.getElementsByName('nombre').value;
+    const apellidos = document.getElementsByName('apellidos').value;
+    const edad = document.getElementsByName('edad').value;
+    const localizacion = document.getElementsByName('localizacion').value;
+    const email = document.getElementsByName('email').value;
+    const sexo = document.getElementsByName('sexo').value;
+    const trabajo = document.getElementsByName('trabajo').value;
+    const tarjetaBancaria = document.getElementsByName('tarjetaBancaria').value;
+    const nacionalidad = document.getElementsByName('nacionalidad').value;
     
    
 

@@ -1,6 +1,5 @@
 class Usuario {
   constructor(usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, tarjetaBancaria, nacionalidad, fechaAlta) {
-
     this.usuario = usuario;
     this.contrasenia = contrasenia;
     this.nombre = nombre;
