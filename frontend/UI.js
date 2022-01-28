@@ -20,10 +20,16 @@ class UI {
             </div>
             <div class="col-md-8">
                 <div class="card-block px-2">
+<<<<<<< HEAD
+                    <h4 class="card-title">${usuario.usuario}</h4>
+                    <p class="card-text">${usuario.nombre}</p>
+                    <a href="#" class="btn btn-danger delete" _id="${usuario._id}">X</a>
+=======
                     <h4 class="card-title">${book.nombre}</h4>
                     <p class="card-text">${book.password}</p>
                     <p class="card-text">${book.sexo}</p>
                     <a href="#" class="btn btn-danger delete" _id="${book._id}">X</a>
+>>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
                 </div>
             </div>
         </div>
@@ -42,9 +48,15 @@ class UI {
     this.clearBookForm();
   }
 
+<<<<<<< HEAD
+  clearUsuarioForm() {
+    document.getElementById('usuario-form').reset();
+    document.getElementById('usuario').focus();
+=======
   clearBookForm() {
     document.getElementById('book-form').reset();
     document.getElementById('title').focus();
+>>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
   }
 
   renderMessage(message, colorMessage, secondsToRemove) {
@@ -64,9 +76,15 @@ class UI {
     }, secondsToRemove);
   }
 
+<<<<<<< HEAD
+  async deleteUsuario(usuarioId) {
+    await usuarioService.deleteUsuario(usuarioId);
+    this.renderUsuarios();
+=======
   async deleteBook(bookId) {
     await bookService.deleteBook(bookId);
     this.renderBooks();
+>>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
   }
 
 }
