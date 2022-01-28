@@ -1,6 +1,6 @@
 import "./styles/app.css";
 
-import Usuario from './models/usuarios.js';
+import Usuario from './models/Usuario';
 import UI from './UI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
