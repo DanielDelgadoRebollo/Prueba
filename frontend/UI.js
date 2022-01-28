@@ -1,12 +1,12 @@
-import usuarioService from './services/UsuarioService';
-const UsuarioService = new UsuarioService();
+import UsuarioService from './services/UsuarioService';
+const usuarioService = new UsuarioService();
 
 import { format } from 'timeago.js';
 
 class UI {
 
   async renderBooks() {
-    const user = await UsuarioService.getUser();
+    const user = await usuarioService.getUsuario();
     const usuarioCardContainer = document.getElementById('usuario-cards');
     usuarioCardContainer.innerHTML = '';
     usuario.forEach((user) => {
@@ -33,7 +33,7 @@ class UI {
   }
 
   async addANewBook(usuario){
-    await UsuarioService.postUsuarios(usuario);
+    await usuarioService.postUsuarios(usuario);
     this.renderBooks();
     this.clearBookForm();
   }
