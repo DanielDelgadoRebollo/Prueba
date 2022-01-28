@@ -1,7 +1,7 @@
 class UsuarioService {
 
     constructor() {
-        this.URI = `/api/Usuario`;
+        this.URI = `/api/Usuario.js`;
     }
 
     async getUsuario() {
