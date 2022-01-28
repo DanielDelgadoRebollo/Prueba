@@ -5,7 +5,7 @@ import { format } from 'timeago.js';
 
 class UI {
 
-  async renderBooks() {
+  async renderUser() {
     const user = await usuarioService.getUsuario();
     const usuarioCardContainer = document.getElementById('usuario-cards');
     usuarioCardContainer.innerHTML = '';

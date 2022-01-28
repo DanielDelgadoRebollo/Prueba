@@ -1,11 +1,11 @@
 import "./styles/app.css";
 
-import Usuario from './models/Usuario.js';
+import Usuario from './models/usuarios.js';
 import UI from './UI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
-  ui.renderBooks();
+  ui.renderUser();
 });
 
 
