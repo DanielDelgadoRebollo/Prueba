@@ -1,7 +1,9 @@
+import Usuario from "../../backend/models/Usuario";
+
 class UsuarioService {
 
     constructor() {
-        this.URI = `/api/usuarios.js`;
+        this.URI = `/api/Usuario`;
     }
 
     async getUsuario() {
@@ -14,7 +16,7 @@ class UsuarioService {
 
         const res = await fetch(this.URI, {
             method: 'POST',
-            body: book
+            body: Usuario
         });
         const data = await res.json();
 
