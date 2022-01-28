@@ -15,7 +15,6 @@ document.getElementById('book-form')
     const usuario = document.getElementById('usuario').value;
     const contrasenia = document.getElementById('contrasenia').value;
     const nombre = document.getElementById('nombre').value;
-<<<<<<< HEAD
     const apellidos = document.getElementById('apellidos').value;
     const edad = document.getElementById('edad').value;
     const localizacion = document.getElementById('localizacion').value;
@@ -39,16 +38,6 @@ document.getElementById('book-form')
     formData.append('trabajo', trabajo);
     formData.append('tarjetaBancaria', tarjetaBancaria);
     formData.append('nacionalidad', nacionalidad);
-=======
-    const password = document.getElementById('password').value;
-    const sexo = document.getElementById('sexo').value;
-
-    const formData = new FormData();
-  
-    formData.append('nombre', nombre);
-    formData.append('password', password);
-    formData.append('sexo', sexo);
->>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
 
     // for(var pair of formData.entries()) {
     //   console.log(pair[0]+', '+pair[1]);
@@ -58,7 +47,6 @@ document.getElementById('book-form')
     const ui = new UI();
 
     // New Book Object
-<<<<<<< HEAD
     const user= new Usuario(usuario, contrasenia, nombre, apellidos, edad, localizacion, email, sexo, trabajo, 
       tarjetaBancaria, nacionalidad);
 
@@ -69,23 +57,13 @@ document.getElementById('book-form')
     } else {
       // Pass the new book to the UI
       ui.addANewUsuario(formData);
-=======
-    const book = new Book(nombre, password, sexo);
-
-    // Validating User Input
-    if (nombre === '' || password === '' || sexo === '') {
-      ui.renderMessage('Please fill all the fields', 'error', 3000);
-    } else {
-      // Pass the new book to the UI
-      ui.addANewBook(formData);
->>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
       ui.renderMessage('New Book Added Successfully', 'success', 2000);
     }
 
     e.preventDefault();
   });
 
-document.getElementById('books-cards')
+document.getElementById('usuario-cards')
   .addEventListener('click', e => {
     const ui = new UI();
     if (e.target.classList.contains('delete')) {

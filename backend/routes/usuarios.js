@@ -18,12 +18,11 @@ router.post('/', async (req, res) => {
         tarjetaBancaria, nacionalidad});
     console.log(newUsuario)
     await newUsuario.save();
-    res.json({'message': 'Usuario Saved'});
+    res.json({'message': 'Usuario guardado'});
 });
 
 router.delete('/:id', async (req, res) => {
     const usuario = await Usuario.findByIdAndDelete(req.params.id);
-    await unlink(path.resolve('./backend/public/' + usuario.imagePath));
     res.json({message: 'Usuario Deleted'});
 });
 

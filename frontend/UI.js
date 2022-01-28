@@ -1,35 +1,25 @@
-import BookService from './services/BookService';
-const bookService = new BookService();
+import usuarioService from './services/UsuarioService';
+const usuarioService = new UsuarioService();
 
 import { format } from 'timeago.js';
 
 class UI {
 
   async renderBooks() {
-    const books = await bookService.getBooks();
-    const booksCardContainer = document.getElementById('books-cards');
-    booksCardContainer.innerHTML = '';
-    books.forEach((book) => {
+    const user = await usuarioService.getUser();
+    const usuarioCardContainer = document.getElementById('usuario-cards');
+    usuarioCardContainer.innerHTML = '';
+    usuario.forEach((user) => {
       const div = document.createElement('div');
       div.className = 'animated fadeInRight';
       div.innerHTML = `
       <div class="card m-2">
         <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="${book.imagePath}" class="img-fluid" alt="">
-            </div>
             <div class="col-md-8">
                 <div class="card-block px-2">
-<<<<<<< HEAD
                     <h4 class="card-title">${usuario.usuario}</h4>
                     <p class="card-text">${usuario.nombre}</p>
                     <a href="#" class="btn btn-danger delete" _id="${usuario._id}">X</a>
-=======
-                    <h4 class="card-title">${book.nombre}</h4>
-                    <p class="card-text">${book.password}</p>
-                    <p class="card-text">${book.sexo}</p>
-                    <a href="#" class="btn btn-danger delete" _id="${book._id}">X</a>
->>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
                 </div>
             </div>
         </div>
@@ -38,25 +28,19 @@ class UI {
         </div>
       </div>
       `;
-      booksCardContainer.appendChild(div);
+      usuarioCardContainer.appendChild(div);
     });
   }
 
-  async addANewBook(book) {
-    await bookService.postBook(book);
+  async addANewBook(usuario){
+    await usuarioService.postUsuarios(usuario);
     this.renderBooks();
     this.clearBookForm();
   }
 
-<<<<<<< HEAD
   clearUsuarioForm() {
     document.getElementById('usuario-form').reset();
     document.getElementById('usuario').focus();
-=======
-  clearBookForm() {
-    document.getElementById('book-form').reset();
-    document.getElementById('title').focus();
->>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
   }
 
   renderMessage(message, colorMessage, secondsToRemove) {
@@ -76,15 +60,9 @@ class UI {
     }, secondsToRemove);
   }
 
-<<<<<<< HEAD
   async deleteUsuario(usuarioId) {
     await usuarioService.deleteUsuario(usuarioId);
     this.renderUsuarios();
-=======
-  async deleteBook(bookId) {
-    await bookService.deleteBook(bookId);
-    this.renderBooks();
->>>>>>> 05c1e4a7958ea0765ac38f78664da99552273758
   }
 
 }
