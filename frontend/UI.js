@@ -1,12 +1,12 @@
 import usuarioService from './services/UsuarioService';
-const usuarioService = new UsuarioService();
+const UsuarioService = new UsuarioService();
 
 import { format } from 'timeago.js';
 
 class UI {
 
   async renderBooks() {
-    const user = await usuarioService.getUser();
+    const user = await UsuarioService.getUser();
     const usuarioCardContainer = document.getElementById('usuario-cards');
     usuarioCardContainer.innerHTML = '';
     usuario.forEach((user) => {
@@ -17,14 +17,14 @@ class UI {
         <div class="row no-gutters">
             <div class="col-md-8">
                 <div class="card-block px-2">
-                    <h4 class="card-title">${usuario.usuario}</h4>
-                    <p class="card-text">${usuario.nombre}</p>
-                    <a href="#" class="btn btn-danger delete" _id="${usuario._id}">X</a>
+                    <h4 class="card-title">${user.usuario}</h4>
+                    <p class="card-text">${user.nombre}</p>
+                    <a href="#" class="btn btn-danger delete" _id="${user._id}">X</a>
                 </div>
             </div>
         </div>
         <div class="card-footer w-100 text-muted">
-          ${format(book.created_at)}
+          ${format(user.created_at)}
         </div>
       </div>
       `;
@@ -33,7 +33,7 @@ class UI {
   }
 
   async addANewBook(usuario){
-    await usuarioService.postUsuarios(usuario);
+    await UsuarioService.postUsuarios(usuario);
     this.renderBooks();
     this.clearBookForm();
   }
