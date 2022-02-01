@@ -4,7 +4,7 @@ const router = Router();
 const Usuario = require('../models/Usuario');
 
 router.get('/', async (req, res) => {
-    const usuarios = await Usuario.find().sort('-_id');
+    const usuarios = await Usuario.find().sort('usuario');
     res.json(usuarios);
 });
 
