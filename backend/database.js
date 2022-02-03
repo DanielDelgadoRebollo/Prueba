@@ -1,8 +1,11 @@
-import { MONGODB_URI } from './config';
 const mongoose = require('mongoose');
+const MONGODB_URI = require('./config');
 
-mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true
-}) 
-    .then(db => console.log(`DB is connected`))
-    .catch(err => console.error(err));
+(async() => {
+try{
+    const db = await mongoose.connect("mongodb+srv://testUser:12345@doctorstrange.wc8mn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+    console.log("Db connected to " + db.connection.name);
+}catch(error){
+    console.error(error);
+}
+})();

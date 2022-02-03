@@ -1,3 +1,4 @@
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 } 
@@ -7,13 +8,14 @@ const morgan = require('morgan');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+const PORT = require("./config");
 
 // Initializations
 const app = express();
 require('./database');
 
 // settings
-app.set('port', process.env.PORT || 4000);
+app.set('port', PORT);
 
 // middlewares
 app.use(morgan('dev'));
@@ -35,6 +37,6 @@ app.use('/api/usuarios', require('./routes/usuarios'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // start the server
-app.listen(app.get('port'), () => {
+app.listen(app.get(PORT), () => {
     console.log(`Server on port ${app.get('port')}`);
 });
