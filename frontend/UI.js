@@ -5,8 +5,8 @@ import { format } from 'timeago.js';
 
 class UI {
 
-  async renderUser() {
-    const user = await usuarioService.getUsuario();
+  async renderUsuarios() {
+    const user = await usuarioService.getUsuarios();
     const usuarioCardContainer = document.getElementById('usuario-cards');
     usuarioCardContainer.innerHTML = '';
     user.forEach((element) => {
@@ -34,8 +34,8 @@ class UI {
 
   async addANewUsuario(usuario){
     await usuarioService.postUsuarios(usuario);
-    this.renderBooks();
-    this.clearBookForm();
+    this.renderUsuarios();
+    this.clearUsuarioForm();
   }
 
   clearUsuarioForm() {

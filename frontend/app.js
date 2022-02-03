@@ -5,24 +5,24 @@ import UI from './UI.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
-  ui.renderUser();
+  ui.renderUsuarios();
 });
 
 
 document.getElementById('usuario-form')
   .addEventListener('submit', function(e) {
 
-    const usuario = document.getEle('usuario').value;
-    const contrasenia = document.getElementsByName('contrasenia').value;
-    const nombre = document.getElementsByName('nombre').value;
-    const apellidos = document.getElementsByName('apellidos').value;
-    const edad = document.getElementsByName('edad').value;
-    const localizacion = document.getElementsByName('localizacion').value;
-    const email = document.getElementsByName('email').value;
-    const sexo = document.getElementsByName('sexo').value;
-    const trabajo = document.getElementsByName('trabajo').value;
-    const tarjetaBancaria = document.getElementsByName('tarjetaBancaria').value;
-    const nacionalidad = document.getElementsByName('nacionalidad').value;
+    const usuario = document.getElementsById('usuario').value;
+    const contrasenia = document.getElementsById('contrasenia').value;
+    const nombre = document.getElementsById('nombre').value;
+    const apellidos = document.getElementsById('apellidos').value;
+    const edad = document.getElementsById('edad').value;
+    const localizacion = document.getElementsById('localizacion').value;
+    const email = document.getElementsById('email').value;
+    const sexo = document.getElementsById('sexo').value;
+    const trabajo = document.getElementsById('trabajo').value;
+    const tarjetaBancaria = document.getElementsById('tarjetaBancaria').value;
+    const nacionalidad = document.getElementsById('nacionalidad').value;
     
    
 
@@ -51,8 +51,8 @@ document.getElementById('usuario-form')
       tarjetaBancaria, nacionalidad);
 
     // Validating User Input
-    if (user.usuario === '' || user.contrasenia === '' || user.nombre === '' || user.apellidos === '' || user.edad === '' || user.localizacion === '' 
-    || user.email === '' || user.sexo === '' || user.trabajo === '' || user.tarjetaBancaria === '' || user.nacionalidad === '') {
+    if (usuario === '' || contrasenia === '' || nombre === '' || apellidos === '' || edad === '' || localizacion === '' 
+    || email === '' || sexo === '' || trabajo === '' || tarjetaBancaria === '' || nacionalidad === '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
@@ -67,7 +67,7 @@ document.getElementById('usuario-cards')
   .addEventListener('click', e => {
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
-      ui.deleteBook(e.target.getAttribute('_id'));
+      ui.deleteUsuario(e.target.getAttribute('_id'));
       ui.renderMessage('Book Deleted Successfully', 'success', 3000);
     }
     e.preventDefault();

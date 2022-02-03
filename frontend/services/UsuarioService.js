@@ -1,15 +1,13 @@
-import Usuario from "../../backend/models/Usuario";
-
 class UsuarioService {
 
     constructor() {
-        this.URI = `/api/Usuario`;
+        this.URI = `/api/usuarios`;
     }
 
-    async getUsuario() {
+    async getUsuarios() {
         const response = await fetch(this.URI);    
-        const usuario = await response.json();
-        return usuario;
+        const usuarios = await response.json();
+        return usuarios;
     }
 
     async postUsuarios(usuario) {
