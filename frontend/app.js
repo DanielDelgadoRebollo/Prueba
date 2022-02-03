@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('usuario-form')
   .addEventListener('submit', function(e) {
 
-    const usuario = document.getElementsByName('usuario').value;
+    const usuario = document.getEle('usuario').value;
     const contrasenia = document.getElementsByName('contrasenia').value;
     const nombre = document.getElementsByName('nombre').value;
     const apellidos = document.getElementsByName('apellidos').value;
@@ -51,8 +51,8 @@ document.getElementById('usuario-form')
       tarjetaBancaria, nacionalidad);
 
     // Validating User Input
-    if (usuario === '' || contrasenia === '' || nombre === '' || apellidos === '' || edad === '' || localizacion === '' 
-    || email === '' || sexo === '' || trabajo === '' || tarjetaBancaria === '' || nacionalidad === '') {
+    if (user.usuario === '' || user.contrasenia === '' || user.nombre === '' || user.apellidos === '' || user.edad === '' || user.localizacion === '' 
+    || user.email === '' || user.sexo === '' || user.trabajo === '' || user.tarjetaBancaria === '' || user.nacionalidad === '') {
       ui.renderMessage('Please fill all the fields', 'error', 3000);
     } else {
       // Pass the new book to the UI
