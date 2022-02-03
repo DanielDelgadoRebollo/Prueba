@@ -3,7 +3,7 @@ const MONGODB_URI = require('./config');
 
 (async() => {
 try{
-    const db = await mongoose.connect("mongodb+srv://testUser:12345@doctorstrange.wc8mn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+    const db = await mongoose.connect(MONGODB_URI.MONGODB_URI);
     console.log("Db connected to " + db.connection.name);
 }catch(error){
     console.error(error);
