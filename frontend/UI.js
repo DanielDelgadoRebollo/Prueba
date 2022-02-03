@@ -9,7 +9,7 @@ class UI {
     const user = await usuarioService.getUsuario();
     const usuarioCardContainer = document.getElementById('usuario-cards');
     usuarioCardContainer.innerHTML = '';
-    usuario.forEach((user) => {
+    user.forEach((element) => {
       const div = document.createElement('div');
       div.className = 'animated fadeInRight';
       div.innerHTML = `
@@ -17,14 +17,14 @@ class UI {
         <div class="row no-gutters">
             <div class="col-md-8">
                 <div class="card-block px-2">
-                    <h4 class="card-title">${user.usuario}</h4>
-                    <p class="card-text">${user.nombre}</p>
-                    <a href="#" class="btn btn-danger delete" _id="${user._id}">X</a>
+                    <h4 class="card-title">${element.usuario}</h4>
+                    <p class="card-text">${element.nombre}</p>
+                    <a href="#" class="btn btn-danger delete" _id="${element._id}">X</a>
                 </div>
             </div>
         </div>
         <div class="card-footer w-100 text-muted">
-          ${format(user.created_at)}
+          ${format(element.created_at)}
         </div>
       </div>
       `;
@@ -52,8 +52,8 @@ class UI {
     div.appendChild(document.createTextNode(message));
     // Puting in the documnet
     const container = document.querySelector('.col-md-4');
-    const bookForm = document.querySelector('#book-form');
-    container.insertBefore(div, bookForm);
+    const userForm = document.querySelector('#usuario-form');
+    container.insertBefore(div, userForm);
     // Removing the div after some secconds
     setTimeout(() => {
       document.querySelector('.message').remove();
