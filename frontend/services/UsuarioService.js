@@ -16,7 +16,7 @@ class UsuarioService {
 
         const res = await fetch(this.URI, {
             method: 'POST',
-            body: Usuario
+            body: usuario
         });
         const data = await res.json();
 
