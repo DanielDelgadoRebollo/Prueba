@@ -32,7 +32,7 @@ class UI {
     });
   }
 
-  async addANewBook(usuario){
+  async addANewUsuario(usuario){
     await usuarioService.postUsuarios(usuario);
     this.renderBooks();
     this.clearBookForm();

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.getElementById('usuario-form')
-  .addEventListener('Submit', function(e) {
+  .addEventListener('submit', function(e) {
 
     const usuario = document.getElementsByName('usuario').value;
     const contrasenia = document.getElementsByName('contrasenia').value;
