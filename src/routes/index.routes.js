@@ -9,9 +9,9 @@ router.get('/',(req,res)=>{
 router.post('/tasks/add',async (req,res)=>{
     const usuarioRegistrado = Task(req.body)
     const usuarioGuardado = await usuarioRegistrado.save()
-    console.log(usuarioGuardado)
-    console.log(usuarioRegistrado)
-    res.send('saved')
+    console.log(usuarioGuardado);
+    console.log(usuarioRegistrado);
+    res.redirect("/");
 })
 
 router.get('/about',(req,res)=>{

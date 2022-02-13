@@ -13,8 +13,6 @@ const usuarioSchema = new Schema({
   Edad : Number,
   Email: {
     type:String,
-    unique : true,
-    trim:true
     },
   FechaAlta: Date,
   TarjetaBancaria: String,
