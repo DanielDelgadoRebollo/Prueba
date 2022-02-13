@@ -10,4 +10,4 @@ import {MONGODB_URI} from './config'
         console.log(error)
     }
     
-})()
+})();
