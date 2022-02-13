@@ -2,5 +2,5 @@
  import './database'
  import {PORT} from './config'
  
- app.listen(3000);
+ app.listen(PORT);
  console.log('Server on port',PORT);
