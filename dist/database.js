@@ -8,6 +8,8 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 
 var _mongoose = require("mongoose");
 
+var _config = require("./config");
+
 (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
   var db;
   return _regenerator["default"].wrap(function _callee$(_context) {
@@ -16,7 +18,7 @@ var _mongoose = require("mongoose");
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return (0, _mongoose.connect)("mongodb+srv://testUser:12345@doctorstrange.wc8mn.mongodb.net/DoctorStrange?retryWrites=true&w=majority");
+          return (0, _mongoose.connect)(_config.MONGODB_URI);
 
         case 3:
           db = _context.sent;

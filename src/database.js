@@ -1,11 +1,13 @@
 import { connect } from "mongoose";
+import {MONGODB_URI} from './config'
+
 
 (async() =>{
     try{
-        const db = await connect("mongodb+srv://testUser:12345@doctorstrange.wc8mn.mongodb.net/DoctorStrange?retryWrites=true&w=majority")
+        const db = await connect(MONGODB_URI)
         console.log("DB connected to",db.connection.name)
     }catch(error){
         console.log(error)
     }
     
-})()
+})();
